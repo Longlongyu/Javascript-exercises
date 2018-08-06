@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>Number guessing game</title>
+  </head>
+  <body>
+    <h1>Number guessing game</h1>
+    <a href="/index.html">Back home page</a>
+    <p>
+      We have selected a random number between 1 and 100.  See if 
+      you can guess it in 10 turns or less. We'll tell you if your 
+      guess was too high or too low.
+    </p>
+    <iframe name="mytarget" style="display: none;"></iframe>
+    <form target="mytarget">
+      <label>Enter a guess:</label>
+      <input type="text" class="GameText"/>
+      <input type="submit" value="Submit guess" class="GameSubmit" />
+    </form>
+    <p class="output"></p>
+    <p class="guess"></p>
+    <p class="confirm"></p>
+    <script src="javascript/game.js?v1.1.1"></script>
+  </body>
+</html>
