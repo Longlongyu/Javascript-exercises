@@ -5,6 +5,7 @@ You can click the link: [here.](https://longlongyu.github.io/Javascript-exercise
 
 **See my exercises：**
 - [Number guessing game.](https://longlongyu.github.io/Javascript-exercises/NumberGuessGame.html)
+- [Character string count.](https://longlongyu.github.io/Javascript-exercises/CharacterCount.html)
 
 # License
 MIT
