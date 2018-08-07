@@ -36,6 +36,7 @@ function NumberGuessGame() {
 
   function GameSubmitClick(e){
     var n = GameText.value | 0;
+    if (typeof n !== 'number') n = 0;
     GameText.value = '';
     guessNumbers.push(n);
     output.textContent = 'Previous guesses: ' + guessNumbers.join(' ');
@@ -59,9 +60,38 @@ function NumberGuessGame() {
       setGameOver();
     }
   }
-
   GameSubmit.addEventListener('click', GameSubmitClick);
-
 }
 
-NumberGuessGame();
+function CharacterStringCount() {
+  var GameSubmit = document.querySelector('.GameSubmit'),
+      GameText = document.querySelector('.GameText'),
+      Info= document.querySelector('.Info'),
+      Letters = document.querySelector('.EnglishLetters'),
+      Spaces = document.querySelector('.Spaces'),
+      Numbers = document.querySelector('.Numbers'),
+      Other = document.querySelector('.Other'),
+      regL = /[a-zA-Z]/, regS = /\s/, regN = /[0-9]/, regO = /[^a-zA-Z0-9\s]/;
+
+  function regEx(reg, str) {
+    var count = 0;
+    while(str.search(reg) != -1) {
+      str = str.replace(reg, '');
+      count++;
+    }
+    return count;
+  }
+  function GameSubmitClick(e) {
+    var n = GameText.value;
+    GameText.value = '';
+    n += '';
+    Info.textContent = n;
+    Info.setAttribute('style', 'background-color:green;color:white;');
+    Letters.textContent = 'Letters : ' + regEx(regL, n);
+    Spaces.textContent = 'Spaces : ' + regEx(regS, n);
+    Numbers.textContent = 'Numbers : ' + regEx(regN, n);
+    Other.textContent = 'Other : ' + regEx(regO, n);
+  }
+  
+  GameSubmit.addEventListener('click', GameSubmitClick);
+}

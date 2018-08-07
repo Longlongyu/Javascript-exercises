@@ -2,37 +2,40 @@
 <html>
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Number guessing game</title>
+  <title>Character string count</title>
 </head>
 
 <body>
   <header>
-    <h1>Number guessing game</h1>
+    <h1>Character string count</h1>
   </header>
   <nav>
     <a href="/Javascript-exercises/index.html">Back home page</a>
   </nav>
   <article>
     <p>
-      We have selected a random number between 1 and 100. See if you can guess it in 10 turns or less. We'll tell you if your guess
-      was too high or too low.
+      You put a string in input, please. 
+      We'll get the number of English letters, Spaces, Numbers,
+      and other characters on the string.
     </p>
     <iframe name="mytarget" style="display: none;"></iframe>
     <form target="mytarget">
       <label>Enter a guess:</label>
       <input type="text" class="GameText" />
-      <input type="submit" value="Submit guess" class="GameSubmit" />
+      <input type="submit" value="Submit string" class="GameSubmit" />
     </form>
-    <p class="output"></p>
-    <p class="guess"></p>
-    <p class="confirm"></p>
+    <p class="Info"></p>
+    <p class="EnglishLetters"></p>
+    <p class="Spaces"></p>
+    <p class="Numbers"></p>
+    <p class="Other"></p>
   </article>
 
   <script src="javascript/game.js?v1.2.5"></script>
   <script>
-    NumberGuessGame();
+    CharacterStringCount();
   </script>
 </body>
 
