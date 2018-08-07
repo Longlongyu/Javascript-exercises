@@ -95,3 +95,38 @@ function CharacterStringCount() {
   
   GameSubmit.addEventListener('click', GameSubmitClick);
 }
+
+function CoinGame() {
+  var GameSubmit = document.querySelector('.GameSubmit'),
+      GameText = document.querySelector('.GameText'),
+      Output= document.querySelector('.Output'),
+      Count = document.querySelector('.Count'),
+      Confirm = document.querySelector('.Confirm');
+
+  function compute(money) {
+    var A = 2, B = 5, count = 0, str = '';
+		for (var i = 0; i <= money/B; i++) {
+      var n = money - (i * B);
+			for (var j = 0; j <= n/A; j++) {
+        var x = n - (j * A);
+				if (x >= 0) {
+          str += '$5: ' + i + ' $2: ' + j + ' $1: ' + x + '<br />';
+          count++;
+        }
+			}
+    }
+    return {count:count,str:str}
+  }
+
+  function GameSubmitClick(e) {
+    var n = GameText.value | 0;
+    GameText.value = '';
+    var v = compute(n);
+    Count.setAttribute('style', 'background-color:green;color:white;');
+    Count.textContent = 'The total number of : ' + v.count;
+    Confirm.textContent = 'Output : ';
+    Output.innerHTML = v.str;
+  }
+  
+  GameSubmit.addEventListener('click', GameSubmitClick);
+}
