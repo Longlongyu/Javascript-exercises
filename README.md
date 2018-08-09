@@ -7,6 +7,7 @@ You can click the link: [here.](https://longlongyu.github.io/Javascript-exercise
 - [Number guessing game.](https://longlongyu.github.io/Javascript-exercises/NumberGuessGame.html)
 - [Character string count.](https://longlongyu.github.io/Javascript-exercises/CharacterCount.html)
 - [Coin Game.](https://longlongyu.github.io/Javascript-exercises/CoinGame.html)
+- [Multiplication table.](https://longlongyu.github.io/Javascript-exercises/MultiplicationTable.html)
 
 # License
 MIT

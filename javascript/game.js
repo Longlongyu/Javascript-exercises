@@ -130,3 +130,26 @@ function CoinGame() {
   
   GameSubmit.addEventListener('click', GameSubmitClick);
 }
+
+function MultiplicationTable() {
+  var GameSubmit = document.querySelector('.GameSubmit'),
+      Output= document.querySelector('.Output');
+
+  function GameSubmitClick(e) {
+    var max = 9;
+    Output.innerHTML = '';
+    var table = document.createElement('table');
+		for(var x = 1; x <= max; x++) {
+      var tr = document.createElement('tr');
+			for(var y = 1; y <= max; y++) {
+        var td;
+        x == 1 ? td = document.createElement('th') : td = document.createElement('td')
+        td.textContent = x * y;
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+    }
+    Output.appendChild(table);
+  }
+  GameSubmit.addEventListener('click', GameSubmitClick);
+}
