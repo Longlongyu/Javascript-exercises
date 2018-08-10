@@ -1,4 +1,4 @@
-function NumberGuessGame() {
+function numberGuessGame() {
   var random, turn, guessNumbers, resetButton;
   var GameSubmit = document.querySelector('.GameSubmit'),
       GameText = document.querySelector('.GameText'),
@@ -34,7 +34,7 @@ function NumberGuessGame() {
   }
   reStart();
 
-  function GameSubmitClick(e){
+  function gameSubmitClick(e){
     var n = GameText.value | 0;
     if (typeof n !== 'number') n = 0;
     GameText.value = '';
@@ -60,10 +60,10 @@ function NumberGuessGame() {
       setGameOver();
     }
   }
-  GameSubmit.addEventListener('click', GameSubmitClick);
+  GameSubmit.addEventListener('click', gameSubmitClick);
 }
 
-function CharacterStringCount() {
+function characterStringCount() {
   var GameSubmit = document.querySelector('.GameSubmit'),
       GameText = document.querySelector('.GameText'),
       Info= document.querySelector('.Info'),
@@ -81,7 +81,7 @@ function CharacterStringCount() {
     }
     return count;
   }
-  function GameSubmitClick(e) {
+  function gameSubmitClick(e) {
     var n = GameText.value;
     GameText.value = '';
     n += '';
@@ -93,10 +93,10 @@ function CharacterStringCount() {
     Other.textContent = 'Other : ' + regEx(regO, n);
   }
   
-  GameSubmit.addEventListener('click', GameSubmitClick);
+  GameSubmit.addEventListener('click', gameSubmitClick);
 }
 
-function CoinGame() {
+function coinGame() {
   var GameSubmit = document.querySelector('.GameSubmit'),
       GameText = document.querySelector('.GameText'),
       Output= document.querySelector('.Output'),
@@ -118,7 +118,7 @@ function CoinGame() {
     return {count:count,str:str}
   }
 
-  function GameSubmitClick(e) {
+  function gameSubmitClick(e) {
     var n = GameText.value | 0;
     GameText.value = '';
     var v = compute(n);
@@ -128,14 +128,14 @@ function CoinGame() {
     Output.innerHTML = v.str;
   }
   
-  GameSubmit.addEventListener('click', GameSubmitClick);
+  GameSubmit.addEventListener('click', gameSubmitClick);
 }
 
-function MultiplicationTable() {
+function multiplicationTable() {
   var GameSubmit = document.querySelector('.GameSubmit'),
       Output= document.querySelector('.Output');
 
-  function GameSubmitClick(e) {
+  function gameSubmitClick(e) {
     var max = 9;
     Output.innerHTML = '';
     var table = document.createElement('table');
@@ -151,5 +151,5 @@ function MultiplicationTable() {
     }
     Output.appendChild(table);
   }
-  GameSubmit.addEventListener('click', GameSubmitClick);
+  GameSubmit.addEventListener('click', gameSubmitClick);
 }
